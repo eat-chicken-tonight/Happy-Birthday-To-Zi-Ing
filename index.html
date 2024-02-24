@@ -55,7 +55,7 @@
     <script src="./js/lxheart.js"></script>
     <script src="./js/filltext.js"></script>
     <script>
-        var texts = ['邱姿颖宝宝', '生日快乐', '❤️', '永远18', '美丽可爱的宝宝', '温柔', ''];
+        var texts = ['邱姿颖宝宝', '❤️Zi Ing生日快乐❤️', '❤️', '永远18', '❤️乖宝宝❤️', '温柔可爱的宝宝', '元宵节快乐！'];
 
         var params = new URLSearchParams(window.location.search);
         var text = params.get('text');
@@ -63,7 +63,7 @@
         if (text) {
         texts = text.split(',')
         }
-        document.getElementById('contents').innerHTML = word || '邱姿颖宝宝<br> 二十六岁 <br> ❤生日快乐❤';
+        document.getElementById('contents').innerHTML = word || '邱姿颖宝宝<br> 二十六岁 <br> ❤️生日快乐❤️';
 
         renderLxHeart(document.getElementById('heart'), '#ec9bad');
         fillText(document.getElementById('pinkboard'), texts)
