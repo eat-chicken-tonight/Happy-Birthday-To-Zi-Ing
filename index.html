@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="language" content="zh-CN">
+    <meta name="title" content="爱心代码">
+    <meta name="describe" content="欢迎点赞分享 ">
+
+    <title>💗 祝邱姿颖宝宝生日快乐呀！ 💗</title>
+
+    <link rel="stylesheet" href="./style/main.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: rgb(4, 4, 22);
+        }
+
+        #contents {
+            color: pink;
+            font-size: 2em;
+            text-align: center;
+            width: 100%;
+            height: 100px;
+            text-transform: none;
+        }
+        .type_words{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:180px;height:180px;color:#f1dadb;padding:20px;text-transform:lowercase;}
+    </style>
+</head>
+
+<body onclick="bodyPlayMusic()">
+
+
+
+    <div class="type_words" id="contents">给你的爱心</div>
+    <canvas id="pinkboard" width="1707" height="868"></canvas>
+    <canvas id="heart" width="1000" height="600"></canvas>
+
+    <!--<audio id="audio" src="https://music.163.com/song/media/outer/url?id=27130317.mp3" preload="auto" loop="loop"></audio>-->
+    <audio id="audio" src="https://m701.music.126.net/20240223234156/8a90f6a3c70650de63c8b378c7103e87/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/30736695434/60f2/2d7a/c1e9/2a13e42e91f32497c2c35d9745ab0383.mp3" preload="auto" loop="loop"></audio>
+    <script>
+        var shouci = true;
+        console.log(shouci);
+        function bodyPlayMusic() {
+        if (shouci) {
+        shouci = false;
+        audio.play();
+        console.log(shouci);
+        }
+        };
+    </script>
+    <script src="./js/lxheart.js"></script>
+    <script src="./js/filltext.js"></script>
+    <script>
+        var texts = ['邱姿颖宝宝', '生日快乐', '❤️', '永远18', '美丽可爱的宝宝', '温柔', ''];
+
+        var params = new URLSearchParams(window.location.search);
+        var text = params.get('text');
+        var word = params.get('word');
+        if (text) {
+        texts = text.split(',')
+        }
+        document.getElementById('contents').innerHTML = word || '邱姿颖宝宝<br> 二十六岁 <br> ❤生日快乐❤';
+
+        renderLxHeart(document.getElementById('heart'), '#ec9bad');
+        fillText(document.getElementById('pinkboard'), texts)
+    </script>
+</body>
+
+</html>
